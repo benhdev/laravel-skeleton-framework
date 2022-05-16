@@ -5,10 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-0": {
-            "Skeleton": "src/Skeleton.php"
-        },
-        "psr-4": {
-            "Skeleton\\": "src/"
+            "Skeleton": "src/"
         }
     },
     "authors": [
