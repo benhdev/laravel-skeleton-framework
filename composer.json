@@ -22,6 +22,9 @@
         "symfony/console": "^6.0"
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "v1.x"
+        },
         "laravel": {
             "providers": [
                 "Skeleton\\SkeletonServiceProvider"
