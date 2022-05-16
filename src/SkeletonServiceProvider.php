@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Sanctum;
+namespace Benhdev\Skeleton;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
