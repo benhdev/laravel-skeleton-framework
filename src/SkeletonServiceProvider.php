@@ -46,7 +46,7 @@ class SkeletonServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../config/skeleton.php' => config_path('skeleton.php')
-        ]);
+        ], 'laravel-assets');
 
         foreach ($this->guards() as $name => $config) {
             if (!class_exists($driver = $config['driver'])) {
@@ -70,7 +70,7 @@ class SkeletonServiceProvider extends ServiceProvider
             });
         }
 
-
+        $this->app->auth->shouldUse(config('skeleton.defaults.guard', null));
     }
 
     protected function guards()

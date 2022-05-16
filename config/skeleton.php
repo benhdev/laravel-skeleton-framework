@@ -11,8 +11,8 @@ return [
     |
     | This option controls the default authentication "guard" for your application.
     |
-    | You may change these defaults as required, however you must set
-    | the default guard in config/auth.php to 'skeleton' for this to work
+    | You may change these defaults as required, however be aware this setting
+    | will override the defaults configuration within config/auth.php
     |
     |
     */
