@@ -14,7 +14,9 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/skeleton.php', 'skeleton'
+        );
     }
 
     /**
@@ -24,7 +26,8 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Log::debug('test');
-        Log::debug('Another test');
+        $this->publishes([
+            __DIR__.'/../config/skeleton.php' => config_path('skeleton.php')
+        ]);
     }
 }
