@@ -25,5 +25,6 @@ class SkeletonServiceProvider extends ServiceProvider
     public function boot()
     {
         Log::debug('test');
+        Log::debug('Another test');
     }
 }
