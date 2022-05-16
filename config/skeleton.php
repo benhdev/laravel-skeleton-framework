@@ -1,6 +1,6 @@
 <?php
 
-use Benhdev\Skeleton\Skeleton;
+use Skeleton\Skeleton;
 
 return [
 
