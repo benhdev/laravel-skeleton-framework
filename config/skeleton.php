@@ -18,7 +18,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'custom',
+        'guard' => 'skeleton',
     ],
 
     /*
@@ -39,10 +39,17 @@ return [
     */
 
     'guards' => [
-        'custom' => [
-            'driver' => \App\Guards\ExampleGuard::class,
+
+        'skeleton' => [
+            'driver' => \Skeleton\Guards\SkeletonGuard::class,
             'provider' => 'users'
         ],
+
+        // 'custom' => [
+        //     'driver' => \App\Guards\ExampleGuard::class,
+        //     'provider' => 'users'
+        // ],
+
     ],
 
 ];
