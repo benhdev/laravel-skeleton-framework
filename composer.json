@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Benhdev\\Skeleton\\": "src/"
+            "Skeleton\\": "src/"
         }
     },
     "authors": [
@@ -17,12 +17,13 @@
         "php": "^8.1",
         "illuminate/support": "^9.12",
         "illuminate/console": "^9.12",
-        "illuminate/contracts": "^9.12"
+        "illuminate/contracts": "^9.12",
+        "symfony/console": "^6.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Benhdev\\Skeleton\\SkeletonServiceProvider"
+                "Skeleton\\SkeletonServiceProvider"
             ]
         }
     }

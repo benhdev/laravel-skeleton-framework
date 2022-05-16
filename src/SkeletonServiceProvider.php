@@ -1,6 +1,12 @@
 <?php
 
-namespace Benhdev\Skeleton;
+namespace Skeleton;
+
+use Skeleton\Console\Commands\GuardMakeCommand;
+use Skeleton\Console\Commands\HelperMakeCommand;
+use Skeleton\Console\Commands\TraitMakeCommand;
+
+use Skeleton\Exceptions\NotFoundException;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -30,19 +36,25 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                GuardMakeCommand::class,
+                HelperMakeCommand::class,
+                TraitMakeCommand::class
+            ]);
+        }
+
         $this->publishes([
             __DIR__.'/../config/skeleton.php' => config_path('skeleton.php')
         ]);
 
         foreach ($this->guards() as $name => $config) {
-            if (!class_exists($config['driver'])) {
-                continue;
+            if (!class_exists($driver = $config['driver'])) {
+                throw new NotFoundException("Class $driver not found");
             }
 
             $reflectionDriver = new ReflectionClass($config['driver']);
-            $driver = Str::slug($reflectionDriver->getShortName());
-
-            Log::debug($driver);
+            $driver = Str::kebab($reflectionDriver->getShortName());
 
             config([
                 "auth.guards.{$name}" => array_merge([
@@ -57,6 +69,8 @@ class SkeletonServiceProvider extends ServiceProvider
                 );
             });
         }
+
+
     }
 
     protected function guards()

@@ -6,6 +6,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Authentication Defaults
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the default authentication "guard" for your application.
+    |
+    | You may change these defaults as required, however you must set
+    | the default guard in config/auth.php to 'skeleton' for this to work
+    |
+    |
+    */
+
+    'defaults' => [
+        'guard' => 'custom',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Authentication Guards
     |--------------------------------------------------------------------------
     |
