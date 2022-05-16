@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Auth\AuthenticationException;
 
+// Dev Master
+
 class SkeletonGuard implements Guard
 {
     use GuardHelpers;
