@@ -4,8 +4,8 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "psr-0": {
-            "Skeleton": "src/"
+        "psr-4": {
+            "Skeleton\\": "src/"
         }
     },
     "authors": [
